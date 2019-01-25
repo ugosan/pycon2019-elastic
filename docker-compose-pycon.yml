@@ -25,6 +25,8 @@ services:
         ELASTICSEARCH_URL: http://elasticsearch:9200
     networks:
       - esnet
+    depends_on:
+      - elasticsearch
 
   kibana:
     image: docker.elastic.co/kibana/kibana:6.5.4
@@ -35,6 +37,8 @@ services:
         ELASTICSEARCH_URL: http://elasticsearch:9200
     networks:
       - esnet
+    depends_on:
+      - elasticsearch
 
   djangoapp:
     build: ./pycon2019-app
@@ -45,7 +49,6 @@ services:
       - "8000:8000"
     networks:
       - esnet
-
 
 networks:
   esnet:
