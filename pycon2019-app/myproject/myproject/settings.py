@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'elasticapm.contrib.django',
+    'myproject'
 ]
 
 MIDDLEWARE = [
@@ -51,10 +52,12 @@ MIDDLEWARE = [
     'elasticapm.contrib.django.middleware.TracingMiddleware',
 ]
 
+
 ELASTIC_APM = {
    'SERVICE_NAME': 'pycon2019',
    'DEBUG': True,
-   'SERVER_URL': 'http://apm:8200'
+   'SERVER_URL': '',
+   'SECRET_TOKEN': ''
 }
 
 ROOT_URLCONF = 'myproject.urls'
