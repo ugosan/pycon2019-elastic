@@ -1,26 +1,16 @@
-### Elastic APM Workshop - PyCon 2019 - Bogotá
+from django.db import models
 
-#### Run the django app with `docker-compose`:
-
-```shell
-docker-compose build
-docker-compose up
-```
-
-```python
-ELASTIC_APM = {
-   'SERVICE_NAME': 'pycon2019',
-   'DEBUG': True,
-   'SERVER_URL': '<apm-server-url-from-elastic-cloud>',
-   'SECRET_TOKEN': '<secret-token-from-elastic-cloud>'
-}
-```
-
-#### Creating our `models.py`
-
-Movies dataset with the following structure:
-
-```python
+#{
+#    "genre": "Adventure",
+#    "id": "710",
+#    "original_language": "en",
+#    "overview": "James Bond must unmask the mysterious head o...",
+#    "production_companies": "[{'name': 'United Artists', 'id': 60}, {'name': 'Eon Productions', 'id': 7576}]",
+#    "release_date": "1995-11-16",
+#    "runtime": "130.0",
+#    "tagline": "No limits. No fears. No substitutes.",
+#    "title": "GoldenEye"
+#}
 class Movie(models.Model):
     id = models.PositiveIntegerField(primary_key=True)
     title = models.CharField(max_length=255)
@@ -39,8 +29,6 @@ class Role(models.Model):
     role_name = models.CharField(max_length=100)
     actor = models.ForeignKey('Actor',on_delete=models.CASCADE)
     movie = models.ForeignKey('Movie',on_delete=models.CASCADE)
-```
+    
 
-`
-docker exec -it djangoapp python manage.py makemigrations myproject
-`
+      
