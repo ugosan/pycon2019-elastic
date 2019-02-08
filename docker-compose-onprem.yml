@@ -41,12 +41,16 @@ services:
       - elasticsearch
 
   djangoapp:
+    container_name: djangoapp
     build: ./pycon2019-app
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./pycon2019-app/myproject:/myproject
     ports:
       - "8000:8000"
+    environment:
+        SERVER_URL: http://apm:8200
+        SERVICE_NAME: pycon2019
     networks:
       - esnet
 

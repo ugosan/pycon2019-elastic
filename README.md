@@ -41,6 +41,24 @@ class Role(models.Model):
     movie = models.ForeignKey('Movie',on_delete=models.CASCADE)
 ```
 
-`
+
+Create the database migrations:
+```
 docker exec -it djangoapp python manage.py makemigrations myproject
-`
+```
+
+Apply the migrations:
+```
+docker exec -it djangoapp python manage.py migrate
+```
+
+Load the database dump:
+```
+docker exec -it djangoapp python manage.py loaddata db.json
+```
+
+Access the admin interface at http://localhost:8000/admin
+```
+username: admin
+password: admin
+```

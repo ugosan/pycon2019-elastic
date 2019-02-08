@@ -54,10 +54,10 @@ MIDDLEWARE = [
 
 
 ELASTIC_APM = {
-   'SERVICE_NAME': 'pycon2019',
+   'SERVICE_NAME': os.environ.get('SERVICE_NAME'),
    'DEBUG': True,
-   'SERVER_URL': '',
-   'SECRET_TOKEN': ''
+   'SERVER_URL': os.environ.get('SERVER_URL'),
+   'SECRET_TOKEN': os.environ.get('SECRET_TOKEN')
 }
 
 ROOT_URLCONF = 'myproject.urls'
