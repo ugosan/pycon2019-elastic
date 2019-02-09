@@ -1,5 +1,8 @@
 ### Elastic APM Workshop - PyCon 2019 - Bogotá
 
+
+### 1 - Environment set-up
+
 #### Run the django app with `docker-compose`:
 
 ```shell
@@ -15,6 +18,8 @@ ELASTIC_APM = {
    'SECRET_TOKEN': '<secret-token-from-elastic-cloud>'
 }
 ```
+
+### 2 - Data load
 
 #### Creating our `models.py`
 
@@ -62,3 +67,39 @@ Access the admin interface at http://localhost:8000/admin
 username: admin
 password: admin
 ```
+
+Lets add the admin interface for the models, on `pycon2019-app/myproject/myproject/admin.py`:
+
+```python
+from django.contrib import admin
+
+from myproject.models import Movie, Actor, Role
+
+
+class ActorAdmin(admin.ModelAdmin):
+    search_fields = ['name']
+    list_display = ['name']
+
+admin.site.register(Actor, ActorAdmin)
+
+class MovieAdmin(admin.ModelAdmin):
+    ordering = ['-release_date']
+    search_fields = ['title']
+    list_display = ('title', 'tagline')
+
+admin.site.register(Movie, MovieAdmin)
+
+class RoleAdmin(admin.ModelAdmin):
+    search_fields = ['role_name', 'movie__title', 'actor__name']
+    list_display = ['role_name', 'movie_title', 'actor_name']
+    
+admin.site.register(Role, RoleAdmin)
+```
+
+You should have the admin working by now, and check your APM in kibana.
+Lets make a webpage now.
+
+
+### 3 - A webpage
+
+

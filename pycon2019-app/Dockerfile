@@ -8,4 +8,6 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
+ENV PYTHONBUFFERED 1
+
 CMD [ "python", "manage.py", "runserver" ] 
