@@ -30,6 +30,9 @@ docker-compose up
 ```
 You must see a welcome page at http://localhost:8000
 
+<kbd>![](doc/images/django.jpg)</kbd>
+
+
 ### 2 - Data load
 
 #### Creating our `models.py`
