@@ -14,9 +14,7 @@ class MovieAdmin(admin.ModelAdmin):
     search_fields = ['title']
     list_display = ('title', 'tagline')
 
-
 admin.site.register(Movie, MovieAdmin)
-
 
 class RoleAdmin(admin.ModelAdmin):
     search_fields = ['role_name', 'movie__title', 'actor__name']
