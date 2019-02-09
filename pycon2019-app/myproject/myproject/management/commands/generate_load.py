@@ -5,12 +5,10 @@ import os
 import json
 import requests
 import time
-import elasticapm
 import random
 
 class Command(BaseCommand):
     
-    @elasticapm.capture_span()
     def handle(self, *args, **options):
 
         while(True):
