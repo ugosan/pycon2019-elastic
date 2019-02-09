@@ -4,13 +4,14 @@
 ### 1 - Environment set-up
 
 Create an account at https://cloud.elastic.co  and create a Deployment there.
+Copy the APM Server URL
+![](doc/images/apm-server-url.jpg)
 
-![](doc/images/apm-server-url.jpg | width=100)
+Copy the Token
+![](doc/images/apm-token.jpg)
 
-![](doc/images/apm-token.jpg | width=100)
 
-
-Change the variables at `docker-compose.yml`
+Now use those variables at `docker-compose.yml`
 ```yaml
 ...
     environment:
@@ -121,19 +122,8 @@ Lets make a webpage now.
 
 ### 3 - A webpage
 
-urls.py
-```
-from django.contrib import admin
-from django.urls import path
-from myproject.views import index
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', index)
-]
-```
-
-views.py
+Create `myproject/myproject/views.py`:
 ```python
 from django.http import HttpResponse
 from django.template import loader
@@ -165,7 +155,7 @@ def index(request):
 
 ```
 
-myproject/templates/index.html
+Create `myproject/templates/index.html`
 ```html
 <html>
 
@@ -191,3 +181,17 @@ myproject/templates/index.html
 
 </html>
 ```
+
+Change `myproject/myproject/urls.py`:
+```
+from django.contrib import admin
+from django.urls import path
+from myproject.views import index
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', index)
+]
+```
+
+The page should be accesible on http://localhost:8000/
