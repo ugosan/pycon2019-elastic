@@ -5,14 +5,18 @@
 
 Create an account at https://cloud.elastic.co  and create a Deployment there.
 
+![](doc/images/apm-server-url.jpg)
+
+![](doc/images/apm-token.jpg)
+
 
 Change the variables at `docker-compose.yml`
 ```yaml
 ...
     environment:
-      SERVER_URL: changeme
-      SECRET_TOKEN: changeme
-      SERVICE_NAME: pycon2019
+        APM_SERVER_URL: changeme
+        APM_SECRET_TOKEN: changeme
+        APM_SERVICE_NAME: pycon2019
 ```
 
 #### Run the django app with `docker-compose`:
