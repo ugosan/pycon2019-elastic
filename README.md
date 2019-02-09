@@ -3,6 +3,8 @@
 
 ### 1 - Environment set-up
 
+Create an account at https://cloud.elastic.co  and create a Deployment there.
+
 #### Run the django app with `docker-compose`:
 
 ```shell
