@@ -23,6 +23,8 @@ ELASTIC_APM = {
 
 #### Creating our `models.py`
 
+Create the `models.py` file at `myproject/myproject/models.py`
+
 Movies dataset with the following structure:
 
 ```python
