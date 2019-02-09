@@ -102,4 +102,73 @@ Lets make a webpage now.
 
 ### 3 - A webpage
 
+urls.py
+```
+from django.contrib import admin
+from django.urls import path
+from myproject.views import index
 
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', index)
+]
+```
+
+views.py
+```python
+from django.http import HttpResponse
+from django.template import loader
+from myproject.models import Actor, Role, Movie
+import requests
+import json
+
+
+def index(request):
+    search_query = request.GET.get('search_box', None)
+    template = loader.get_template('index.html')
+    context = {}
+
+    if request.method == 'GET' and search_query is not None: 
+
+        actor = Actor.objects.get(name__icontains=search_query)
+        roles = Role.objects.get(actor=actor)
+        
+        r = requests.get('https://api.duckduckgo.com/?q=%s&format=json'%search_query)
+        response = json.loads(r.text)
+
+        context = {
+            'actor': actor,
+            'actor_image': response['Image'],
+            'roles': roles
+        }
+
+    return HttpResponse(template.render(context, request))
+
+```
+
+myproject/templates/index.html
+```html
+<html>
+
+<body>
+      <div class="flex one center demo">
+            <form type="get" action="." style="margin: 50px">
+                  <input id="search_box" type="text" name="search_box" placeholder="Search...">
+                  <button id="search_submit" type="submit">Submit</button>
+            </form>
+
+            <h1 class="flex one center">{{actor.name}}</h1>
+
+            <div style="width: 200px;">
+
+                  <label>
+                        <img style="border: 4px solid" src='{{ actor_image }}' />
+                  </label>
+            </div>
+
+      </div>
+      <link rel="stylesheet" href="https://unpkg.com/picnic">
+</body>
+
+</html>
+```
