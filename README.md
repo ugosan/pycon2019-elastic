@@ -12,13 +12,13 @@ docker-compose build
 docker-compose up
 ```
 
-```python
-ELASTIC_APM = {
-   'SERVICE_NAME': 'pycon2019',
-   'DEBUG': True,
-   'SERVER_URL': '<apm-server-url-from-elastic-cloud>',
-   'SECRET_TOKEN': '<secret-token-from-elastic-cloud>'
-}
+Change the variables at `docker-compose.yml`
+```yaml
+...
+    environment:
+      SERVER_URL: changeme
+      SECRET_TOKEN: changeme
+      SERVICE_NAME: pycon2019
 ```
 
 ### 2 - Data load
