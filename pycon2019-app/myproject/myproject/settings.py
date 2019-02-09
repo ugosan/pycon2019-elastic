@@ -59,6 +59,7 @@ ELASTIC_APM = {
     'SECRET_TOKEN': os.environ.get('SECRET_TOKEN')
 }
 
+
 ROOT_URLCONF = 'myproject.urls'
 
 TEMPLATES = [
