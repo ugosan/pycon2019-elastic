@@ -4,8 +4,10 @@
 ### 1 - Environment set-up
 
 Create an account at https://cloud.elastic.co  and create a Deployment there.
+
 Copy the APM Server URL
 ![](doc/images/apm-server-url.jpg)
+
 
 Copy the Token
 ![](doc/images/apm-token.jpg)
