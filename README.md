@@ -5,9 +5,9 @@
 
 Create an account at https://cloud.elastic.co  and create a Deployment there.
 
-![](doc/images/apm-server-url.jpg)
+![](doc/images/apm-server-url.jpg | width=100)
 
-![](doc/images/apm-token.jpg)
+![](doc/images/apm-token.jpg | width=100)
 
 
 Change the variables at `docker-compose.yml`
