@@ -52,6 +52,11 @@ class Role(models.Model):
     role_name = models.CharField(max_length=100)
     actor = models.ForeignKey('Actor',on_delete=models.CASCADE)
     movie = models.ForeignKey('Movie',on_delete=models.CASCADE)
+    
+    def movie_title(self):
+        return self.movie.title
+    def actor_name(self):
+        return self.actor.name 
 ```
 
 
@@ -102,6 +107,8 @@ class RoleAdmin(admin.ModelAdmin):
     list_display = ['role_name', 'movie_title', 'actor_name']
     
 admin.site.register(Role, RoleAdmin)
+
+
 ```
 
 You should have the admin working by now, and check your APM in kibana.
