@@ -28,6 +28,8 @@ Create the `models.py` file at `myproject/myproject/models.py`
 Movies dataset with the following structure:
 
 ```python
+from django.db import models
+
 class Movie(models.Model):
     id = models.PositiveIntegerField(primary_key=True)
     title = models.CharField(max_length=255)
