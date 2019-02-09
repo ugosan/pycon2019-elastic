@@ -53,10 +53,10 @@ MIDDLEWARE = [
 ]
 
 ELASTIC_APM = {
-   'SERVICE_NAME': os.environ.get('SERVICE_NAME'),
-   'DEBUG': True,
-   'SERVER_URL': os.environ.get('SERVER_URL'),
-   'SECRET_TOKEN': os.environ.get('SECRET_TOKEN')
+    'SERVICE_NAME': os.environ.get('SERVICE_NAME'),
+    'DEBUG': True,
+    'SERVER_URL': os.environ.get('SERVER_URL'),
+    'SECRET_TOKEN': os.environ.get('SECRET_TOKEN')
 }
 
 ROOT_URLCONF = 'myproject.urls'
