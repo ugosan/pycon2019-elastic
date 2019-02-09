@@ -12,10 +12,10 @@ docker-compose up
 
 ```python
 ELASTIC_APM = {
-   'SERVICE_NAME': 'pycon2019',
-   'DEBUG': True,
-   'SERVER_URL': '<apm-server-url-from-elastic-cloud>',
-   'SECRET_TOKEN': '<secret-token-from-elastic-cloud>'
+    'APM_SERVER_URL': '<apm-server-url-from-elastic-cloud>',
+    'APM_SECRET_TOKEN': '<secret-token-from-elastic-cloud>',
+    'APM_SERVICE_NAME': 'pycon2019',
+    'DEBUG': True
 }
 ```
 
