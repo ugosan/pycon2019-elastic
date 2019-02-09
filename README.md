@@ -5,12 +5,6 @@
 
 Create an account at https://cloud.elastic.co  and create a Deployment there.
 
-#### Run the django app with `docker-compose`:
-
-```shell
-docker-compose build
-docker-compose up
-```
 
 Change the variables at `docker-compose.yml`
 ```yaml
@@ -20,6 +14,14 @@ Change the variables at `docker-compose.yml`
       SECRET_TOKEN: changeme
       SERVICE_NAME: pycon2019
 ```
+
+#### Run the django app with `docker-compose`:
+
+```shell
+docker-compose build
+docker-compose up
+```
+You must see a welcome page at http://localhost:8000
 
 ### 2 - Data load
 
