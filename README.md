@@ -5,21 +5,23 @@
 
 Create an account at https://cloud.elastic.co  and create a Deployment there.
 
+
+Change the variables at `docker-compose.yml`
+```yaml
+...
+    environment:
+      SERVER_URL: changeme
+      SECRET_TOKEN: changeme
+      SERVICE_NAME: pycon2019
+```
+
 #### Run the django app with `docker-compose`:
 
 ```shell
 docker-compose build
 docker-compose up
 ```
-
-```python
-ELASTIC_APM = {
-   'SERVICE_NAME': 'pycon2019',
-   'DEBUG': True,
-   'SERVER_URL': '<apm-server-url-from-elastic-cloud>',
-   'SECRET_TOKEN': '<secret-token-from-elastic-cloud>'
-}
-```
+You must see a welcome page at http://localhost:8000
 
 ### 2 - Data load
 
@@ -50,6 +52,11 @@ class Role(models.Model):
     role_name = models.CharField(max_length=100)
     actor = models.ForeignKey('Actor',on_delete=models.CASCADE)
     movie = models.ForeignKey('Movie',on_delete=models.CASCADE)
+    
+    def movie_title(self):
+        return self.movie.title
+    def actor_name(self):
+        return self.actor.name 
 ```
 
 
@@ -100,6 +107,8 @@ class RoleAdmin(admin.ModelAdmin):
     list_display = ['role_name', 'movie_title', 'actor_name']
     
 admin.site.register(Role, RoleAdmin)
+
+
 ```
 
 You should have the admin working by now, and check your APM in kibana.
