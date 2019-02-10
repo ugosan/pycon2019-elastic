@@ -4,7 +4,9 @@
 ### 1 - Environment set-up
 
 <p align="center">
+    <kbd>
     <img src="https://www.ugosan.org/images/termtosvg/termtosvg_o8c49ffj.svg">
+    </kbd>
 </p>
 
 Create an account at https://cloud.elastic.co  and create a Deployment there.
