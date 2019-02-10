@@ -1,9 +1,9 @@
 ### Elastic APM Workshop - PyCon 2019 - Bogotá
 
-
-### 1 - Environment set-up
-
-Create an account at https://cloud.elastic.co  and create a Deployment there.
+### Prerequisites:
+* Install Docker Compose - https://docs.docker.com/compose/install/
+* Create a free account at Elastic Cloud with a 14-day trial period - https://cloud.elastic.co
+* Click `Create Deployment` to create a cluster.
 
 Copy the APM Server URL
 <kbd>![](doc/images/apm-server-url.jpg)</kbd>
@@ -13,7 +13,18 @@ Copy the Token
 <kbd>![](doc/images/apm-token.jpg)</kbd>
 
 
-Now use those variables at `docker-compose.yml`
+### 1 - Environment set-up
+
+First step is to have the Django app up and running.
+
+<p align="center">
+    <kbd>
+    <img src="https://www.ugosan.org/images/termtosvg/termtosvg_e3g9fnkk.svg">
+    </kbd>
+</p>
+
+
+Now add `APM_SERVER_URL` and `APM_SECRET_TOKEN` from your cluster at Elastic cloud at `docker-compose.yml`:
 ```yaml
 ...
     environment:
@@ -34,6 +45,12 @@ You must see a welcome page at http://localhost:8000
 
 
 ### 2 - Data load
+<p align="center">
+    <kbd>
+    <img src="https://www.ugosan.org/images/termtosvg/termtosvg_q18tf5ze.svg">
+    </kbd>
+</p>
+
 
 #### Creating our `models.py`
 
@@ -160,7 +177,7 @@ def index(request):
 
 ```
 
-Create `myproject/templates/index.html`
+Create `myproject/myproject/templates/index.html`
 ```html
 <html>
 
