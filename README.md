@@ -45,6 +45,12 @@ You must see a welcome page at http://localhost:8000
 
 
 ### 2 - Data load
+<p align="center">
+    <kbd>
+    <img src="https://www.ugosan.org/images/termtosvg/termtosvg_q18tf5ze.svg">
+    </kbd>
+</p>
+
 
 #### Creating our `models.py`
 
