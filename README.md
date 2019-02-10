@@ -177,7 +177,7 @@ def index(request):
 
 ```
 
-Create `myproject/templates/index.html`
+Create `myproject/myproject/templates/index.html`
 ```html
 <html>
 
