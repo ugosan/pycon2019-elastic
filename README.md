@@ -3,6 +3,10 @@
 
 ### 1 - Environment set-up
 
+<p align="center">
+    <img src="https://www.ugosan.org/images/termtosvg/termtosvg_o8c49ffj.svg">
+</p>
+
 Create an account at https://cloud.elastic.co  and create a Deployment there.
 
 Copy the APM Server URL
