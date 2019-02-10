@@ -169,8 +169,7 @@ def index(request):
 
         context = {
             'actor': actor,
-            'actor_image': response['Image'],
-            'roles': roles
+            'actor_image': response['Image']
         }
 
     return HttpResponse(template.render(context, request))
