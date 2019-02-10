@@ -5,7 +5,7 @@
 
 <p align="center">
     <kbd>
-    <img src="https://www.ugosan.org/images/termtosvg/termtosvg_o8c49ffj.svg">
+    <img src="https://www.ugosan.org/images/termtosvg/termtosvg_e3g9fnkk.svg">
     </kbd>
 </p>
 
